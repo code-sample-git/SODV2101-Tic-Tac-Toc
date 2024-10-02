@@ -18,6 +18,7 @@ namespace SODV2101_Tic_Tac_Toc
             ticTacToeGame.PlayerMoved += OnPlayerMoved;
             ticTacToeGame.ResetGame();
             InitializePanels();
+            ResetPanels(); // Clear the UI after resetting the game
         }
 
         // Initialize the panels for the 3x3 grid and attach click events
@@ -59,6 +60,7 @@ namespace SODV2101_Tic_Tac_Toc
                     {
                         MessageBox.Show($"{winner} wins!");
                         ticTacToeGame.ResetGame();
+                        ResetPanels(); // Clear the UI to visually reset the game
                     }
                 }
             }
@@ -91,6 +93,19 @@ namespace SODV2101_Tic_Tac_Toc
         private void mainBoard_Paint(object sender, PaintEventArgs e)
         {
             // Optional custom drawing code (can be left empty)
+        }
+
+        // Clear the UI panels
+        private void ResetPanels()
+        {
+            foreach (Control control in mainBoard.Controls)
+            {
+                var panel = control as Panel;
+                if (panel != null)
+                {
+                    panel.Controls.Clear(); // Remove any label (X or O)
+                }
+            }
         }
     }
 }
