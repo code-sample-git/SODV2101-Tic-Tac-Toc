@@ -50,7 +50,6 @@ namespace SODV2101_Tic_Tac_Toc
                 var row = this.mainBoard.GetRow(clickedPanel);
                 var col = this.mainBoard.GetColumn(clickedPanel);
 
-
                 // Make a move using the TicTacToeGame class
                 if (ticTacToeGame.MakeMove(row, col))
                 {
@@ -60,11 +59,18 @@ namespace SODV2101_Tic_Tac_Toc
                     {
                         MessageBox.Show($"{winner} wins!");
                         ticTacToeGame.ResetGame();
-                        ResetPanels(); // Clear the UI to visually reset the game
+                        ResetPanels(); // Clear the board after the game ends
+                    }
+                    else if (ticTacToeGame.IsDraw())
+                    {
+                        MessageBox.Show("It's a draw!");
+                        ticTacToeGame.ResetGame();
+                        ResetPanels(); // Clear the board after the game ends
                     }
                 }
             }
         }
+
 
 
         // Handle the PlayerMoved event to update the UI
@@ -94,6 +100,10 @@ namespace SODV2101_Tic_Tac_Toc
         {
             // Optional custom drawing code (can be left empty)
         }
+
+
+
+
 
         // Clear the UI panels
         private void ResetPanels()

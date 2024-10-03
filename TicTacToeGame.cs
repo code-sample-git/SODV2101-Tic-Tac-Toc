@@ -43,4 +43,20 @@ public class TicTacToeGame
     {
         return gameBoard.CheckForWinner();
     }
+
+    // Method to check for a draw
+    public bool IsDraw()
+    {
+        for (int row = 0; row < 3; row++)
+        {
+            for (int col = 0; col < 3; col++)
+            {
+                if (gameBoard.GetCell(row, col) == null) // If any cell is empty, it's not a draw
+                {
+                    return false;
+                }
+            }
+        }
+        return CheckWinner() == null; // Return true only if there's no winner and the board is full
+    }
 }
