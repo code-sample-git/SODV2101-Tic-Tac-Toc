@@ -16,9 +16,7 @@ namespace SODV2101_Tic_Tac_Toc
 
             ticTacToeGame = new TicTacToeGame();
             ticTacToeGame.PlayerMoved += OnPlayerMoved;
-            ticTacToeGame.ResetGame();
             InitializePanels();
-            ResetPanels(); // Clear the UI after resetting the game
         }
 
         // Initialize the panels for the 3x3 grid and attach click events
@@ -71,8 +69,6 @@ namespace SODV2101_Tic_Tac_Toc
             }
         }
 
-
-
         // Handle the PlayerMoved event to update the UI
         private void OnPlayerMoved(int row, int col, Player player)
         {
@@ -100,10 +96,6 @@ namespace SODV2101_Tic_Tac_Toc
         {
             // Optional custom drawing code (can be left empty)
         }
-
-
-
-
 
         // Clear the UI panels
         private void ResetPanels()
