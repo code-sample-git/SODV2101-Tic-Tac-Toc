@@ -1,6 +1,6 @@
 ﻿namespace SODV2101_Tic_Tac_Toc
 {
-    partial class Form1
+    partial class SmallGrid
     {
         /// <summary>
         /// Required designer variable.
@@ -33,34 +33,36 @@
             // 
             // mainBoard
             // 
+            mainBoard.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             mainBoard.ColumnCount = 3;
-            mainBoard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            mainBoard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            mainBoard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            mainBoard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33F));
+            mainBoard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33F));
+            mainBoard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33F));
             mainBoard.Dock = DockStyle.Fill;
             mainBoard.Location = new Point(0, 0);
             mainBoard.Name = "mainBoard";
             mainBoard.RowCount = 3;
-            mainBoard.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            mainBoard.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            mainBoard.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            mainBoard.Size = new Size(800, 450);
+            mainBoard.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33F));
+            mainBoard.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33F));
+            mainBoard.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33F));
+            mainBoard.Size = new Size(700, 750);
             mainBoard.TabIndex = 0;
-
+            mainBoard.Paint += mainBoard_Paint;
             // 
-            // Form1
+            // SmallGrid
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
             Controls.Add(mainBoard);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "SmallGrid";
+            Size = new Size(700, 750);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TableLayoutPanel mainBoard;
+        private System.Windows.Forms.TableLayoutPanel mainBoard;
     }
 }
+
+
